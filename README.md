@@ -1,2 +1,10 @@
 # Carpool-Dijkstra-Algorithm
 Optimising Driving Duration
+
+Some of the roads on a user's route have carpool lanes that they are allowed access if they have at least 2 people in their vehicle. The user would have access to travel time information for both single-occupancy and carpool lanes. They would also have a list of locations where passengers are looking for a ride to the same destination as them.
+
+The objective is to minimize the total driving time, so the user will only give a ride if it does not increase the total driving time. If the user offers a ride, they will pick up the passenger at the location they've specified.
+
+The approach used would be of a layered graph, whereby a forever_alone(graph1) and carpool(graph2) is created and intersecting when a passenger's found. In this initial function, I've initialised the basic attributes of the graphs, then adding edges for vertices found in both graphs forever_alone and carpool. Start by initialising the passenger's and roads attributes and assigning the values of the argugment to its corresponding attributes. Then finding the maximum of the start and end vertices in each of the graphs by iterating over the roads list. Lastly the initialise method creates two list of vertices, one for forever alone and one for the carpool graph, the adding edges to each connected to them, based on the roads given. If there are any passengers, it adds edges from the forever_alone graph to the carpool graph, hence the "layered graph" approach, if a passenger's picked up from the forever_alone graph, it goesdirectly (through an edge/ road) to the carpool graph. 
+
+After creating graphs for both forever_alone and carpool, a backtrack and dijkstra algorithm's implemented to find the shortest path between the destinations in a graph. Technically the start will be at the end vertex and the end will be at the start vertex. It starts out from the back to front to check if it would be an optimal route for the person to get from one end to the other, by only running dijkstra once to obtain the shortest distance from both carpool and forever_alone graphs in order to determine the optimal route for the user.

@@ -1,5 +1,5 @@
 # Carpool-Dijkstra-Algorithm
-Optimising Driving Duration
+Optimising Driving Duration and obtaining the optimal route
 
 Some of the roads on a user's route have carpool lanes that they are allowed access if they have at least 2 people in their vehicle. The user would have access to travel time information for both single-occupancy and carpool lanes. They would also have a list of locations where passengers are looking for a ride to the same destination as them.
 
